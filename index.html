@@ -1,1 +1,11 @@
 Hello World
+
+
+Curlftps (uses Fuse) to mount FTP folder as local drive command:
+mkdir sunet (for example)
+then
+curlftpfs user:password@ftp.example.com sunet
+
+
+And then rsync to copy files to mounted folder
+ rsync  -avz --no-perms --no-owner --no-group --omit-dir-times --checksum --human-readable --progress --ignore-existing public_html/ sunet/public_html/
